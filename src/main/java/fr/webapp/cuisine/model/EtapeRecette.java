@@ -2,22 +2,26 @@ package fr.webapp.cuisine.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "ETAPES_RECETTES")
 @Data
 public class EtapeRecette {
 
-    @Id
-    private int idRecette;
+    @EmbeddedId EtapeRecettePrimaryKey pk;
 
-    @Column
-    private int idEtape;
 
     @Column
     private String descrEtapes;
 }
+
+
+@Embeddable
+@Data
+class EtapeRecettePrimaryKey implements Serializable {
+
+    private int idRecette;
+    private int idEtape;
+        }

@@ -9,28 +9,32 @@ import javax.persistence.*;
 @Table(name="RECETTES")
 public class Recette {
 
-    @Column
+    @Column(name = "IDRECETTE")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRecette;
 
-    @Id
+    @Id()
+    @Column(name = "NOMRECETTE")
     private String nomRecette;
 
-    @Column
+    @Column(name = "IDCAT")
     private int idCat;
 
-    @Column
+    @Column(name = "TPSCUISSON")
     private int tpsCuisson;
 
-    @Column
+    @Column(name = "TPSREPOS")
     private int tpsRepos;
 
-    @Column
+    @Column(name = "TPSPREPA")
     private int tpsPrepa;
 
-    @Column
+    @Column(name = "NBPERS")
     private int nbPers;
 
-    @Column
+    @Column(name = "NOTE")
     private int note;
+
+    @Column(name = "URLIMG")
+    private String urlImg;
 }
