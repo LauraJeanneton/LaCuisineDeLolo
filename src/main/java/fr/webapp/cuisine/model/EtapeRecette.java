@@ -15,7 +15,7 @@ public class EtapeRecette {
     @Id
     private int idRecette;
 
-    @Id
+    @Column
     private int idEtape;
 
     @Column

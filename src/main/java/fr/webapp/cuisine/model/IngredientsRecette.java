@@ -14,7 +14,7 @@ public class IngredientsRecette {
     @Id
     private int idIngredient;
 
-    @Id
+    @Column
     private String nomIngredient;
 
     @Column
