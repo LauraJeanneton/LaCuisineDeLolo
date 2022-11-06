@@ -1,0 +1,533 @@
+2022-11-04 17:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT FOREIGN KEY REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42001-214]
+2022-11-04 17:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE ETAPES_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000aidEtape INT NOT NULL,\000d\000adescrEtapes VARCHAR(2500) NOT NULL,\000d\000aPRIMARY KEY (idRecette,idEtape)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE ETAPES_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000aidEtape INT NOT NULL,\000d\000adescrEtapes VARCHAR(2500) NOT NULL,\000d\000aPRIMARY KEY (idRecette,idEtape)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ETAPES_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+idEtape INT NOT NULL,
+descrEtapes VARCHAR(2500) NOT NULL,
+PRIMARY KEY (idRecette,idEtape)
+) [42001-214]
+2022-11-04 17:05:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:06:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT FOREIGN KEY REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42001-214]
+2022-11-04 17:06:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE ETAPES_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000aidEtape INT NOT NULL,\000d\000adescrEtapes VARCHAR(2500) NOT NULL,\000d\000aPRIMARY KEY (idRecette,idEtape)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE ETAPES_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000aidEtape INT NOT NULL,\000d\000adescrEtapes VARCHAR(2500) NOT NULL,\000d\000aPRIMARY KEY (idRecette,idEtape)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ETAPES_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+idEtape INT NOT NULL,
+descrEtapes VARCHAR(2500) NOT NULL,
+PRIMARY KEY (idRecette,idEtape)
+) [42001-214]
+2022-11-04 17:06:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:06:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT FOREIGN KEY REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42001-214]
+2022-11-04 17:06:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE ETAPES_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000aidEtape INT NOT NULL,\000d\000adescrEtapes VARCHAR(2500) NOT NULL,\000d\000aPRIMARY KEY (idRecette,idEtape)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE ETAPES_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000aidEtape INT NOT NULL,\000d\000adescrEtapes VARCHAR(2500) NOT NULL,\000d\000aPRIMARY KEY (idRecette,idEtape)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ETAPES_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+idEtape INT NOT NULL,
+descrEtapes VARCHAR(2500) NOT NULL,
+PRIMARY KEY (idRecette,idEtape)
+) [42001-214]
+2022-11-04 17:06:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:07:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT FOREIGN KEY REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42001-214]
+2022-11-04 17:07:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:09:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT FOREIGN KEY REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42001-214]
+2022-11-04 17:09:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE ETAPES_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000aidEtape INT NOT NULL,\000d\000adescrEtapes VARCHAR(2500) NOT NULL,\000d\000aPRIMARY KEY (idRecette,idEtape)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE ETAPES_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000aidEtape INT NOT NULL,\000d\000adescrEtapes VARCHAR(2500) NOT NULL,\000d\000aPRIMARY KEY (idRecette,idEtape)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ETAPES_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+idEtape INT NOT NULL,
+descrEtapes VARCHAR(2500) NOT NULL,
+PRIMARY KEY (idRecette,idEtape)
+) [42001-214]
+2022-11-04 17:09:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:09:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT FOREIGN KEY REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42001-214]
+2022-11-04 17:09:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ETAPES_RECETTES" existe déjà
+Table "ETAPES_RECETTES" already exists; SQL statement:
+CREATE TABLE ETAPES_RECETTES(
+idRecette INT,
+idEtape INT NOT NULL,
+descrEtapes VARCHAR(2500) NOT NULL,
+PRIMARY KEY (idRecette,idEtape)
+) [42101-214]
+2022-11-04 17:09:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:10:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT FOREIGN KEY REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42001-214]
+2022-11-04 17:10:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ETAPES_RECETTES" existe déjà
+Table "ETAPES_RECETTES" already exists; SQL statement:
+CREATE TABLE ETAPES_RECETTES(
+idRecette INT AUTO_INCREMENT,
+idEtape INT NOT NULL,
+descrEtapes VARCHAR(2500) NOT NULL,
+PRIMARY KEY (idRecette,idEtape)
+) [42101-214]
+2022-11-04 17:10:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:10:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE RECETTES(\000d\000aidRecette INT AUTO_INCREMENT,\000d\000anomRecette VARCHAR(250) PRIMARY KEY,\000d\000aidCat INT [*]FOREIGN KEY REFERENCES CATEGORIES_RECETTES,\000d\000atpsCuisson INT,\000d\000atpsRepos INT,\000d\000atpsPrepa INT,\000d\000anbPers INT,\000d\000anote INT )"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT FOREIGN KEY REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42001-214]
+2022-11-04 17:10:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ETAPES_RECETTES" existe déjà
+Table "ETAPES_RECETTES" already exists; SQL statement:
+CREATE TABLE ETAPES_RECETTES(
+idRecette INT AUTO_INCREMENT,
+idEtape INT NOT NULL,
+descrEtapes VARCHAR(2500) NOT NULL
+) [42101-214]
+2022-11-04 17:10:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:10:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "ETAPES_RECETTES" existe déjà
+Table "ETAPES_RECETTES" already exists; SQL statement:
+CREATE TABLE ETAPES_RECETTES(
+idRecette INT AUTO_INCREMENT,
+idEtape INT NOT NULL,
+descrEtapes VARCHAR(2500) NOT NULL
+) [42101-214]
+2022-11-04 17:10:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; attendu "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE INGREDIENTS_RECETTES(\000d\000aidRecette INT [*]FOREIGN KEY REFERENCES RECETTES,\000d\000anomIngredient VARCHAR(250) NOT NULL,\000d\000aquantite FLOAT,\000d\000auniteMesure VARCHAR(10),\000d\000aPRIMARY KEY(idRecette, nomIngredient)\000d\000a)"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE INGREDIENTS_RECETTES(
+idRecette INT FOREIGN KEY REFERENCES RECETTES,
+nomIngredient VARCHAR(250) NOT NULL,
+quantite FLOAT,
+uniteMesure VARCHAR(10),
+PRIMARY KEY(idRecette, nomIngredient)
+) [42001-214]
+2022-11-04 17:11:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Impossible de supprimer "CATEGORIES_RECETTES" car "CONSTRAINT_FE" dépend de lui
+Cannot drop "CATEGORIES_RECETTES" because "CONSTRAINT_FE" depends on it; SQL statement:
+DROP TABLE IF EXISTS CATEGORIES_RECETTES [90107-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:129)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:166)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-11-04 17:11:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "CATEGORIES_RECETTES" existe déjà
+Table "CATEGORIES_RECETTES" already exists; SQL statement:
+CREATE TABLE CATEGORIES_RECETTES(
+idCat INT AUTO_INCREMENT PRIMARY KEY,
+nonCat VARCHAR(50) NOT NULL
+) [42101-214]
+2022-11-04 17:11:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "RECETTES" existe déjà
+Table "RECETTES" already exists; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42101-214]
+2022-11-04 17:12:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Impossible de supprimer "CATEGORIES_RECETTES" car "CONSTRAINT_FE" dépend de lui
+Cannot drop "CATEGORIES_RECETTES" because "CONSTRAINT_FE" depends on it; SQL statement:
+DROP TABLE IF EXISTS CATEGORIES_RECETTES [90107-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:129)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:166)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-11-04 17:12:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "CATEGORIES_RECETTES" existe déjà
+Table "CATEGORIES_RECETTES" already exists; SQL statement:
+CREATE TABLE CATEGORIES_RECETTES(
+idCat INT AUTO_INCREMENT PRIMARY KEY,
+nonCat VARCHAR(50) NOT NULL
+) [42101-214]
+2022-11-04 17:12:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "RECETTES" existe déjà
+Table "RECETTES" already exists; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42101-214]
+2022-11-04 17:12:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Impossible de supprimer "CATEGORIES_RECETTES" car "CONSTRAINT_FE" dépend de lui
+Cannot drop "CATEGORIES_RECETTES" because "CONSTRAINT_FE" depends on it; SQL statement:
+DROP TABLE IF EXISTS CATEGORIES_RECETTES [90107-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:129)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:166)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-11-04 17:12:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "CATEGORIES_RECETTES" existe déjà
+Table "CATEGORIES_RECETTES" already exists; SQL statement:
+CREATE TABLE CATEGORIES_RECETTES(
+idCat INT AUTO_INCREMENT PRIMARY KEY,
+nonCat VARCHAR(50) NOT NULL
+) [42101-214]
+2022-11-04 17:12:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La table "RECETTES" existe déjà
+Table "RECETTES" already exists; SQL statement:
+CREATE TABLE RECETTES(
+idRecette INT AUTO_INCREMENT,
+nomRecette VARCHAR(250) PRIMARY KEY,
+idCat INT REFERENCES CATEGORIES_RECETTES,
+tpsCuisson INT,
+tpsRepos INT,
+tpsPrepa INT,
+nbPers INT,
+note INT ) [42101-214]
+2022-11-04 17:13:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Impossible de supprimer "CATEGORIES_RECETTES" car "CONSTRAINT_FE" dépend de lui
+Cannot drop "CATEGORIES_RECETTES" because "CONSTRAINT_FE" depends on it; SQL statement:
+DROP TABLE IF EXISTS CATEGORIES_RECETTES [90107-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:129)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:166)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
