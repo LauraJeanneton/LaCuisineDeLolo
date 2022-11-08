@@ -2099,3 +2099,35 @@ UPDATE RECETTE SET URLIMG='lasagnes' [42102-214]
 org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "URLIMG CHARACTER VARYING(25)": "'lasagnes where idrecette=2' (26)"
 Value too long for column "URLIMG CHARACTER VARYING(25)": "'lasagnes where idrecette=2' (26)"; SQL statement:
 UPDATE RECETTES SET URLIMG='lasagnes where idrecette=2' [22001-214]
+2022-11-08 20:46:08 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "update recettes set urlimg = ''content/lasagne[*]' where idrecette=1;"
+Syntax error in SQL statement "update recettes set urlimg = ''content/lasagne[*]' where idrecette=1;"; SQL statement:
+update recettes set urlimg = ''content/lasagne' where idrecette=1; [42000-214]
+2022-11-08 20:48:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"
+Value too long for column "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"; SQL statement:
+update recettes set urlimg = 'content/pizzaChevreMiel.jpg' where idrecette=2 [22001-214]
+2022-11-08 20:49:08 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"
+Value too long for column "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"; SQL statement:
+update recettes set urlimg = 'content/pizzaChevreMiel.jpg' where idrecette=2 [22001-214]
+2022-11-08 20:49:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"
+Value too long for column "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"; SQL statement:
+update recettes set urlimg = 'content/pizzaChevreMiel.jpg' where idrecette=2 [22001-214]
+2022-11-08 20:49:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"
+Value too long for column "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"; SQL statement:
+update recettes set urlimg = 'content/pizzaChevreMiel.jpg' where idrecette=2 [22001-214]
+2022-11-08 20:49:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"
+Value too long for column "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"; SQL statement:
+update recettes set urlimg = 'content/pizzaChevreMiel.jpg' where idrecette=2 [22001-214]
+2022-11-08 20:49:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"
+Value too long for column "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"; SQL statement:
+update recettes set urlimg = 'content/pizzaChevreMiel.jpg' where idrecette=2 [22001-214]
+2022-11-08 20:49:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Valeur trop longue pour la colonne "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"
+Value too long for column "URLIMG CHARACTER VARYING(25)": "'content/pizzaChevreMiel.jpg' (27)"; SQL statement:
+update recettes set urlimg = 'content/pizzaChevreMiel.jpg' where idrecette=2 [22001-214]
