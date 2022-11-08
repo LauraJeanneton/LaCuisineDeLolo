@@ -3,37 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>La cuisine de Lolo & Leny</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
-    <h1>Liste des recettes de Lolo & Leny</h1>
 
-        <h2>Lasagnes</h2>
+<h1>Liste des recettes de Lolo & Leny</h1>
 
-        <img src="content/lasagne.jpg" alt="Photo de lasagnes"
-        width="200"
-        height="200"
-        title="Lasagnes">
-    <img src="content/pizzaChevreMiel.jpg" alt="Photo de lasagnes"
-         width="200"
-         height="200"
-         title="Lasagnes">
-
-   <!-- <table>
-        <thead>
-
-        </thead>
-        <tbody>
-        <tr th:if="${recettes.empty}">
-            <td colspan="3">Aucunes recettes en base de données</td>
-        </tr>
-        <tr th:each="recette: ${recettes}">
-            <td><span th:text="${recette.nomRecette}"> Recette </span></td>
-            <td> <img th:src="${recette.urlImg}" alt="Photo indisponible"
+        <div class="pageRecette" th:each="recette: ${recettes}">
+            <span th:text="${recette.nomRecette}"> Recette </span><br>
+            <img th:src="${recette.urlImg}" alt="Photo indisponible"
                       width="200"
                       height="200"
-                      title="Lasagnes"></td>
-        </tr>
-        </tbody>
-    </table>-->
+                      title="Lasagnes">
+            <br><br>
+
+        </div>
 </body>
 </html>
