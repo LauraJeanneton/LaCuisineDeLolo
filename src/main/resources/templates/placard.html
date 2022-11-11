@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>La cuisine de Lolo & Leny</title>
+    <link href="content/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+<body>
+<div w3-include-html="/header"></div>
+
+<h1>Mes placards</h1>
+<img src="content/gauche.png" width="20" height="20">
+<span id="monthName" th:text="${month}"></span>
+<img src="content/droite.png"  width="20" height="20">
+
+
+<table id="calendar">
+    <tr>
+        <th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th><th>Samedi</th><th>Dimanche</th>
+    </tr>
+    <div th:each="day: ${days}">
+        <tr th:if="${day}%7==0"></tr> <!-- Ajouter une nouvelle ligne quand on change de semaine-->
+        <td th:if="${day}==0"></td> <!-- Ne pas afficher les 0-->
+        <td th:text="${day}" th:if="${day}!=0"></td> <!-- Afficher les jours différents de 0-->
+
+
+    </div>
+
+</table>
+
+<script>w3.includeHTML();</script>
+</body>
+</html>

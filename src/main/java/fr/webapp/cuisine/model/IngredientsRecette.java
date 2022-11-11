@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 @Data
 @Entity
@@ -12,17 +13,18 @@ public class IngredientsRecette {
 
     @EmbeddedId IngredientRecettePrimaryKey pk;
 
-    @Column
+    @Column(name = "QUANTITE")
     private float quantite;
 
-    @Column
+    @Column(name = "UNITEMESURE")
     private String uniteMesure;
+
+    @Column(name = "SOUSRECETTE")
+    private String sousRecette;
+
+    public String getQuantite(){
+        DecimalFormat df = new DecimalFormat();
+        return df.format(quantite);
+    }
 }
 
-@Embeddable
-@Data
-class IngredientRecettePrimaryKey implements Serializable {
-
-    private int idIngredient;
-    private String nomIngredient;
-}

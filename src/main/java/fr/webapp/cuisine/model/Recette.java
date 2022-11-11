@@ -1,8 +1,12 @@
 package fr.webapp.cuisine.model;
 
 import lombok.Data;
+import net.bytebuddy.asm.Advice;
+import org.thymeleaf.util.DateUtils;
 
 import javax.persistence.*;
+import java.time.LocalTime;
+import java.util.concurrent.TimeUnit;
 
 @Entity
 @Data
@@ -37,4 +41,12 @@ public class Recette {
 
     @Column(name = "URLIMG")
     private String urlImg;
+
+    public String getTpsCuisson(){
+        return String.format("%02d:%02d", tpsCuisson / 60, tpsCuisson % 60);
+    }
+
+    public String getTpsPrepa(){
+        return String.format("%02d:%02d", tpsPrepa / 60, tpsPrepa% 60);
+    }
 }
