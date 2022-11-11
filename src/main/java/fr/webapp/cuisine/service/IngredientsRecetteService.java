@@ -1,5 +1,6 @@
 package fr.webapp.cuisine.service;
 
+
 import fr.webapp.cuisine.model.IngredientsRecette;
 import fr.webapp.cuisine.model.Recette;
 import fr.webapp.cuisine.repository.IngredientsRecetteRepository;
@@ -24,3 +25,4 @@ public class IngredientsRecetteService {
 
 
 }
+

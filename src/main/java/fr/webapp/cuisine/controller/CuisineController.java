@@ -2,7 +2,7 @@ package fr.webapp.cuisine.controller;
 
 import fr.webapp.cuisine.model.IngredientsRecette;
 import fr.webapp.cuisine.model.Recette;
-import fr.webapp.cuisine.repository.IngredientsRecetteRepository;
+
 import fr.webapp.cuisine.service.IngredientsRecetteService;
 import fr.webapp.cuisine.service.RecetteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,6 @@ public class CuisineController {
 
     @Autowired
     private RecetteService recetteService;
-
     @Autowired
     private IngredientsRecetteService ingredientsRecetteService;
 
@@ -39,7 +38,10 @@ public class CuisineController {
     @GetMapping("/accueil")
     public String accueil(Model model){
         Iterable<Recette> listRecettes = recetteService.getRecettes();
+
         Iterable<IngredientsRecette> ingredients = ingredientsRecetteService.getIngredientsRecettes();
+for (IngredientsRecette ir:ingredients)
+    System.out.println(ir);
 
         model.addAttribute("recettes",listRecettes);
         model.addAttribute("ingredients",ingredients);

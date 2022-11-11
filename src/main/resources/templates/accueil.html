@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>La cuisine de Lolo & Leny</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="../content/style.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
 
 <h1>Liste des recettes de Lolo & Leny</h1>
+    <div class="recettes" th:each="recette: ${recettes}">
+        <div class="flexL">
+            <h2> <span th:text="${recette.nomRecette}"></span></h2>
+            <img th:src="${recette.urlImg}" id="recetteImg"
+                width="200"
+                 height="200"/>
+      <table>
+          <tr>
+              <td><img src="content/cuisson.png" /></td>
+              <td><img src="content/preparation.jpg" /></td>
+              <td><img src="content/nbPers.jpg" /></td>
+          </tr>
 
-        <div class="pageRecette" th:each="recette: ${recettes}">
-            <span th:text="${recette.nomRecette}"> Recette </span><br>
-            <img th:src="${recette.urlImg}" alt="Photo indisponible"
-                      width="200"
-                      height="200"
-                      title="Lasagnes">
-            <br><br>
+          <tr>
+              <td><span th:text="${recette.tpsCuisson}"></span></td>
+              <td><span th:text="${recette.tpsPrepa}"></span></td>
+              <td><span th:text="${recette.nbPers}"></span></td>
+          </tr>
 
-        </div>
+      </table>
+        <div>
+
+            <div class="flexR">
+            <h3>Ingredients</h3>
+                <div class="ingredients" th:each="ingredient: ${ingredients}"
+                     th:if="${ingredient.pk.idRecette == recette.idRecette}">
+                    <span th:text="${ingredient.quantite}"></span>
+                    <span th:text="${ingredient.uniteMesure}"></span>
+                    <span th:text="${ingredient.pk.nomIngredient}"></span>
+                </div>
+            </div>
+    </div>
+
 </body>
 </html>

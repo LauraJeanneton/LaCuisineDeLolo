@@ -2,11 +2,14 @@ body, head{
     background-color: lightpink;
 }
 h1{
-    color: limegreen;
+    color: black;
     text-align:  center;
     font-style: oblique;
     background-color: white;
 }
 .pageRecette{
     margin-left: 300px;
+}
+.recettes{
+
 }
