@@ -9,17 +9,20 @@
 <body>
 
 <h1>Liste des recettes de Lolo & Leny</h1>
+
     <div class="recettes" th:each="recette: ${recettes}">
         <div class="flexL">
             <h2> <span th:text="${recette.nomRecette}"></span></h2>
+            <br>
             <img th:src="${recette.urlImg}" id="recetteImg"
-                width="200"
-                 height="200"/>
+                width="300"
+                 height="300"/>
+            <br>
       <table>
           <tr>
-              <td><img src="content/cuisson.png" /></td>
-              <td><img src="content/preparation.jpg" /></td>
-              <td><img src="content/nbPers.jpg" /></td>
+              <td><img src="content/cuisson.png" style="width: 50px"; height="50px" /></td>
+              <td><img src="content/preparation.jpg" style="width: 50px"; height="50px" /></td>
+              <td><img src="content/nbPers.jpg" style="width: 50px"; height="50px" /></td>
           </tr>
 
           <tr>
@@ -29,10 +32,9 @@
           </tr>
 
       </table>
-        <div>
-
+        </div>
             <div class="flexR">
-            <h3>Ingredients</h3>
+            <h3>Ingrédients</h3>
                 <div class="ingredients" th:each="ingredient: ${ingredients}"
                      th:if="${ingredient.pk.idRecette == recette.idRecette}">
                     <span th:text="${ingredient.quantite}"></span>
@@ -41,6 +43,7 @@
                 </div>
             </div>
     </div>
+
 
 </body>
 </html>

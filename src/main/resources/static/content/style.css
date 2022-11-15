@@ -1,5 +1,5 @@
 body, head{
-    background-color: lightpink;
+    background-color: antiquewhite;
 }
 h1{
     color: black;
@@ -7,9 +7,33 @@ h1{
     font-style: oblique;
     background-color: white;
 }
-.pageRecette{
-    margin-left: 300px;
-}
 .recettes{
+    display: flex;
+    margin-bottom: 40px;
+}
 
+.ingredients{
+    margin-top: 10px;
+}
+
+.flexL{
+    flex: 1;
+    padding: 1em;
+    text-align: center;
+    padding-top: 10px;
+}
+.img#recetteImg{
+    width: 300px;
+    height: 300px;
+}
+
+.flexR{
+    flex: 1;
+    padding: 1em;
+    text-align: left;
+    margin-top: 10px;
+}
+table{
+    margin:auto;
+    border-spacing: 15px;
 }
