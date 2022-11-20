@@ -42,6 +42,18 @@
                     <span th:text="${ingredient.pk.nomIngredient}"></span>
                 </div>
             </div>
+        <form action="/afficherRecette" th:action="${recette.idRecette}" method="post">
+                <input type="submit" value="Afficher la recette" />
+        </form>
+        </div>
+    <div>
+    <h2>Étape de la recette</h2>
+    <br>
+        <div class="etapes" th:each="etape: ${etapes}"
+         th:if="${etape.pk.idRecette == recette.idRecette}">
+        <span th:text="${etape.descrEtapes}"></span>
+         </div>
+
     </div>
 
 

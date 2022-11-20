@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,6 +22,7 @@ import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Optional;
 
 @Controller
 public class CuisineController {
@@ -78,4 +81,12 @@ for (IngredientsRecette ir:ingredients)
     public String pageAjoutRecette(Model model){
         return "ajoutRecette";
     }
+
+    @PostMapping("/{idRecette}")
+    public String afficherRecette(@PathVariable("idRecette") String idRecette){
+        Optional<Recette> recette=recetteService.getRecette(1);
+//        recette.setAfficherRecette(true);
+        return "accueil";
+    }
 }
+

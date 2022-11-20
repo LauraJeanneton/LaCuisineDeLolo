@@ -49,4 +49,7 @@ public class Recette {
     public String getTpsPrepa(){
         return String.format("%02d:%02d", tpsPrepa / 60, tpsPrepa% 60);
     }
+
+    @Transient
+    public boolean afficherRecette = false;
 }
