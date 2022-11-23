@@ -12,16 +12,8 @@ public class EtapeRecette {
 
     @EmbeddedId EtapeRecettePrimaryKey pk;
 
-
-    @Column
+    @Column(name = "DESCRETAPES")
     private String descrEtapes;
 }
 
 
-@Embeddable
-@Data
-class EtapeRecettePrimaryKey implements Serializable {
-
-    private int idRecette;
-    private int idEtape;
-        }

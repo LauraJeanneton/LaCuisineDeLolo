@@ -16,14 +16,12 @@ public class RecetteService {
     private RecetteRepository recetteRepository;
 
     public Recette getRecette(final int id){
-        Recette recette = recetteRepository.findByIdRecette(1);
+        Recette recette = recetteRepository.findByIdRecette(id);
         return recette;
     }
 
     public Iterable<Recette> getRecettes(){
         for(Recette recette : recetteRepository.findAll());
-
-
         return recetteRepository.findAll();
     }
 

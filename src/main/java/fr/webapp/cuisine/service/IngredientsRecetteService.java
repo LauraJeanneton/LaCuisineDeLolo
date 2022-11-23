@@ -14,7 +14,6 @@ import java.util.Optional;
 @Data
 @Service
 public class IngredientsRecetteService {
-
     @Autowired
     private IngredientsRecetteRepository ingredientsRecetteRepository;
 
@@ -22,7 +21,5 @@ public class IngredientsRecetteService {
     public Iterable<IngredientsRecette> getIngredientsRecettes(){
         return ingredientsRecetteRepository.findAll();
     }
-
-
 }
 

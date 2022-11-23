@@ -1,8 +1,10 @@
 package fr.webapp.cuisine.controller;
 
+import fr.webapp.cuisine.model.EtapeRecette;
 import fr.webapp.cuisine.model.IngredientsRecette;
 import fr.webapp.cuisine.model.Recette;
 
+import fr.webapp.cuisine.service.EtapeRecetteService;
 import fr.webapp.cuisine.service.IngredientsRecetteService;
 import fr.webapp.cuisine.service.RecetteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,8 @@ public class CuisineController {
     private RecetteService recetteService;
     @Autowired
     private IngredientsRecetteService ingredientsRecetteService;
+    @Autowired
+    private EtapeRecetteService etapeRecetteService;
 
     @GetMapping("/hello")
     public String sayHello(){
@@ -40,13 +44,20 @@ public class CuisineController {
         return "hello";
     }
 
-    @GetMapping("/accueil")
+    @GetMapping("/")
     public String accueil(Model model){
+        setAllAfficherRecette();
         Iterable<Recette> listRecettes = recetteService.getRecettes();
         Iterable<IngredientsRecette> ingredients = ingredientsRecetteService.getIngredientsRecettes();
         model.addAttribute("recettes",listRecettes);
         model.addAttribute("ingredients",ingredients);
         return ("accueil");
+    }
+
+    public void setAllAfficherRecette(){
+        for (Recette recette: recetteService.getRecettes()) {
+            recette.setAfficherRecette(false);
+        }
     }
 
     @GetMapping("/placard")
@@ -83,11 +94,13 @@ public class CuisineController {
 
     @PostMapping("/{idRecette}")
     public String afficherRecette(@PathVariable("idRecette") String idRecette, Model model){
-        Recette recette= recetteService.getRecette(1);
+        recetteService.getRecette(Integer.parseInt(idRecette)).setAfficherRecette(true);
         Iterable<Recette> listRecettes = recetteService.getRecettes();
         Iterable<IngredientsRecette> ingredients = ingredientsRecetteService.getIngredientsRecettes();
+        Iterable<EtapeRecette> etapeRecettes = etapeRecetteService.getEtapesRecette(Integer.parseInt(idRecette));
         model.addAttribute("recettes",listRecettes);
         model.addAttribute("ingredients",ingredients);
+        model.addAttribute("etapes", etapeRecettes);
         return ("accueil");
     }
 }
