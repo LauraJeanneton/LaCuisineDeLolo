@@ -15,8 +15,9 @@ public class RecetteService {
     @Autowired
     private RecetteRepository recetteRepository;
 
-    public Optional<Recette> getRecette(final int id){
-        return recetteRepository.findById(id);
+    public Recette getRecette(final int id){
+        Recette recette = recetteRepository.findByIdRecette(1);
+        return recette;
     }
 
     public Iterable<Recette> getRecettes(){

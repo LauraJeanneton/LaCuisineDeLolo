@@ -2,19 +2,22 @@ body, head{
     background-color: antiquewhite;
 }
 h1{
-    color: black;
+    color: limegreen;
     text-align:  center;
     font-style: oblique;
     background-color: white;
 }
-.recettes{
+
+.recettes {
     display: flex;
     margin-bottom: 40px;
+    margin-top: 15px;
 }
 
 .ingredients{
     margin-top: 10px;
 }
+
 
 .flexL{
     flex: 1;
@@ -22,6 +25,7 @@ h1{
     text-align: center;
     padding-top: 10px;
 }
+
 .img#recetteImg{
     width: 300px;
     height: 300px;
@@ -37,3 +41,58 @@ table{
     margin:auto;
     border-spacing: 15px;
 }
+
+img#recetteImg {
+    width: 300px;
+    height: 300px;
+}
+
+
+#recetteTable{
+    margin:auto;
+    border-spacing : 15px;
+
+}
+
+.menu {
+    display: flex;              /* Transformation en flexbox */
+    padding:0;                  /* Suppression des marges internes */
+}
+
+.menu li {
+    list-style-type: none ;       /* Suppression des puces */
+}
+.menu a {
+    display:block;                /* Transformation en block */
+    min-width: 120px;             /* Largeur minimale des liens */
+}
+.menu a {
+    display:block;                /* Transformation en block */
+    min-width: 120px;             /* Largeur minimale des liens */
+    margin: 0.5rem;               /* Marges externes (1 valeurs = 4 directions) */
+    padding: 0.4rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
+    text-align: center;           /* Centrage du texte */
+    background-color: #4CAF50;    /* Couleur d'arrière-plan */
+    color: #fff;                  /* Couleur du texte */
+    text-decoration: none;        /* Suppression du soulignement */
+    border: 1px solid #fff;       /* Ajout d'une bordure */
+    border-radius: 4px;           /* Arrondis des bordures */
+}
+
+#calendar{
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
+    width:10%;
+}
+#calendar td {
+    display:table-cell;
+    width: 40px;
+    text-align: center;
+}
+
+#monthName{
+    font-size: 30px;
+    margin: 10px;
+}
+

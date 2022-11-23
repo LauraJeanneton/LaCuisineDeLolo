@@ -7,6 +7,8 @@ import fr.webapp.cuisine.service.IngredientsRecetteService;
 import fr.webapp.cuisine.service.RecetteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ConcurrentModel;
+import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,11 +43,7 @@ public class CuisineController {
     @GetMapping("/accueil")
     public String accueil(Model model){
         Iterable<Recette> listRecettes = recetteService.getRecettes();
-
         Iterable<IngredientsRecette> ingredients = ingredientsRecetteService.getIngredientsRecettes();
-for (IngredientsRecette ir:ingredients)
-    System.out.println(ir);
-
         model.addAttribute("recettes",listRecettes);
         model.addAttribute("ingredients",ingredients);
         return ("accueil");
@@ -82,11 +80,15 @@ for (IngredientsRecette ir:ingredients)
         return "ajoutRecette";
     }
 
+
     @PostMapping("/{idRecette}")
-    public String afficherRecette(@PathVariable("idRecette") String idRecette){
-        Optional<Recette> recette=recetteService.getRecette(1);
-//        recette.setAfficherRecette(true);
-        return "accueil";
+    public String afficherRecette(@PathVariable("idRecette") String idRecette, Model model){
+        Recette recette= recetteService.getRecette(1);
+        Iterable<Recette> listRecettes = recetteService.getRecettes();
+        Iterable<IngredientsRecette> ingredients = ingredientsRecetteService.getIngredientsRecettes();
+        model.addAttribute("recettes",listRecettes);
+        model.addAttribute("ingredients",ingredients);
+        return ("accueil");
     }
 }
 
