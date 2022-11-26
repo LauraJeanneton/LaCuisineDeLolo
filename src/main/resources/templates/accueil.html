@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>La cuisine de Lolo & Leny</title>
 
-    <link href="content/style.css" rel="stylesheet" type="text/css" />
+    <link href="content/style.css" rel="stylesheet" type="text/css"/>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
 
 </head>
@@ -15,52 +15,62 @@
 <button onclick="location.href='/hello'" class="buttonAjouterAfficherRecette">Ajouter une recette</button>
 
 
-    <div class="recettes" th:each="recette: ${recettes}">
-        <div class="flexL">
-            <h2> <span th:text="${recette.nomRecette}"></span></h2>
-            <br>
-            <img th:src="${recette.urlImg}" id="recetteImg"
-                width="300"
-                 height="300"/>
-            <br>
-      <table>
-          <tr>
-              <td><img src="content/cuisson.png" style="width: 50px"; height="50px" /></td>
-              <td><img src="content/preparation.jpg" style="width: 50px"; height="50px" /></td>
-              <td><img src="content/nbPers.jpg" style="width: 50px"; height="50px" /></td>
-          </tr>
+<div class="recettes" th:each="recette: ${recettes}">
+    <div class="flexL">
+        <h2><span th:text="${recette.nomRecette}"></span></h2>
+        <br>
+        <img th:src="${recette.urlImg}" id="recetteImg"
+             width="300"
+             height="300"/>
+        <br>
+        <table>
+            <tr>
+                <td><img src="content/cuisson.png" style="width: 50px" ; height="50px"/></td>
+                <td><img src="content/preparation.jpg" style="width: 50px" ; height="50px"/></td>
+                <td><img src="content/nbPers.jpg" style="width: 50px" ; height="50px"/></td>
+            </tr>
 
-          <tr>
-              <td><span th:text="${recette.tpsCuisson}"></span></td>
-              <td><span th:text="${recette.tpsPrepa}"></span></td>
-              <td><span th:text="${recette.nbPers}"></span></td>
-          </tr>
+            <tr>
+                <td><span th:text="${recette.tpsCuisson}"></span></td>
+                <td><span th:text="${recette.tpsPrepa}"></span></td>
+                <td><span th:text="${recette.nbPers}"></span></td>
+            </tr>
 
-      </table>
+        </table>
+    </div>
+    <div class="flexR">
+        <h3>Ingrédients</h3>
+        <div class="ingredients" th:each="ingredient: ${ingredients}"
+             th:if="${ingredient.pk.idRecette == recette.idRecette}">
+            <span th:text="${ingredient.quantite}"></span>
+            <span th:text="${ingredient.uniteMesure}"></span>
+            <span th:text="${ingredient.pk.nomIngredient}"></span>
+
         </div>
-            <div class="flexR">
-            <h3>Ingrédients</h3>
-                <div class="ingredients" th:each="ingredient: ${ingredients}"
-                     th:if="${ingredient.pk.idRecette == recette.idRecette}">
-                    <span th:text="${ingredient.quantite}"></span>
-                    <span th:text="${ingredient.uniteMesure}"></span>
-                    <span th:text="${ingredient.pk.nomIngredient}"></span>
-                </div>
-            </div>
-        <form action="/afficherRecette" th:action="${recette.idRecette}" method="post" >
-            <input type="submit" value="Afficher la recette">
+
+        <form action="/afficherRecette" th:action="${recette.idRecette}" method="post"
+              th:if="${recette.afficherRecette==false}">
+            <input class="buttonAjouterAfficherRecette" type="submit" value="Afficher la recette">
         </form>
-        </div>
-    <div>
-    <h2>Étape de la recette</h2>
-    <br>
-        <div class="etapes" th:each="etape: ${etapes}"
-         th:if="${etape.pk.idRecette == recette.idRecette}">
-        <span th:text="${etape.descrEtapes}"></span>
-         </div>
+        <form action="/" method="get" th:if="${recette.afficherRecette}">
+            <input class="buttonAjouterAfficherRecette" type="submit" value="Masquer la recette">
+        </form>
 
     </div>
 
+
+    <div class="flexEtapes" th:if="${recette.afficherRecette}">
+        <h2>Étape de la recette</h2>
+        <br>
+        <div class="etapes">
+            <ul th:each="etape: ${etapes}"
+                th:if="${etape.pk.idRecette == recette.idRecette}">
+                <li th:text="${etape.descrEtapes}"></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
 <script>w3.includeHTML();</script>
 </body>
 </html>
